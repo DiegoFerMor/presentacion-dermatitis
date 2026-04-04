@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State of the Art in Atopic Dermatitis | Hygieia Hub</title>
+    
+    <!-- Fonts: Manrope (Display) & Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons: Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0a192f",    // Azul Marino profundo (Autoridad/Ciencia)
+                        brandPrimary: "#0a192f",
+                        secondary: "#1e40af",  // Azul Rey / Cobalt (Llamadas a la acción)
+                        accent: "#0ea5e9",     // Celeste Brillante (Destellos e iconos)
+                        surface: "#f0f9ff",    // Azul pastel muy claro (Fondo principal)
+                        "surface-low": "#e0f2fe", // Azul pastel medio (Secciones alternas)
+                        "surface-lowest": "#ffffff", // Blanco puro
+                        "on-surface": "#0f172a", // Gris pizarra muy oscuro (Textos)
+                        outline: "#64748b",    // Gris azulado (Bordes y textos secundarios)
+                    },
+                    fontFamily: {
+                        headline: ["Manrope", "sans-serif"],
+                        body: ["Inter", "sans-serif"],
+                    },
+                    letterSpacing: {
+                        ultra: "-0.02em",
+                        stately: "0.2em",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
+        
+        /* Nuevo gradiente: De un azul noche muy oscuro a un azul cobalto intenso */
+        .hero-gradient { 
+            background: linear-gradient(135deg, #020617 0%, #1e3a8a 100%); 
+        }
+        
+        .glass-nav { 
+            background: rgba(255, 255, 255, 0.90); 
+            backdrop-filter: blur(16px); 
+        }
+        
+        /* Reveal animation */
+        .reveal { transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); opacity: 0; transform: translateY(20px); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        /* Custom Accordion transition */
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
+        .accordion-item.active .accordion-content { max-height: 500px; }
+        .accordion-item.active .accordion-icon { transform: rotate(180deg); }
+        
+        .text-balance { text-wrap: balance; }
+        
+        /* Color de selección de texto adaptado al tema azul */
+        ::selection { background-color: #0ea5e9; color: #ffffff; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+
+    <!-- Header / Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-surface-low shadow-sm transition-all">
+        <div class="max-w-7xl mx-auto px-6 h-28 lg:h-32 flex justify-between items-center transition-all">
+            <!-- Brand: Logo Exclusivo del Proyecto -->
+            <div class="flex items-center">
+                <img src="./logos/logo_derma.png" alt="State of the Art in Atopic Dermatitis" class="h-20 md:h-28 lg:h-32 w-auto drop-shadow-sm transition-all" onerror="this.onerror=null; this.src='https://placehold.co/400x150/transparent/0a192f?text=Programa+Derma'">
+            </div>
+            
+            <!-- Links -->
+            <div class="hidden lg:flex items-center gap-10">
+                <a href="#proposito" class="text-sm font-semibold text-primary hover:text-secondary transition-colors uppercase tracking-widest text-[11px]">Justificación</a>
+                <a href="#objetivos" class="text-sm font-semibold text-primary hover:text-secondary transition-colors uppercase tracking-widest text-[11px]">Objetivos</a>
+                <a href="#programa" class="text-sm font-semibold text-primary hover:text-secondary transition-colors uppercase tracking-widest text-[11px]">Programa</a>
+                <a href="#avales" class="text-sm font-semibold text-primary hover:text-secondary transition-colors uppercase tracking-widest text-[11px]">Docentes</a>
+            </div>
+            
+        </div>
+    </nav>
+
+    <main>
+        <!-- 0. Section: Hero (Cabecera) -->
+        <header class="hero-gradient relative min-h-screen flex items-center pt-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 relative z-10 w-full">
+                <div class="lg:col-span-8 space-y-10 reveal">
+                    <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 mb-4">
+                        <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+                        <span class="text-[10px] font-black uppercase tracking-widest text-white/90">Edición 2026 - 2027</span>
+                    </div>
+                    
+                    <h1 class="flex flex-col gap-2 md:gap-4">
+                        <span class="text-xl md:text-2xl lg:text-3xl font-medium text-white/90 tracking-wide leading-snug max-w-4xl">
+                            State of the Art in Atopic Dermatitis: Self Assessment Program
+                        </span>
+                        <span class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.05] tracking-ultra text-balance mt-2">
+                            El Eje Neuroinmune <br>
+                            <span class="text-accent italic font-medium">y el Control del Prurito</span>
+                        </span>
+                    </h1>
+                    
+                    <p class="text-lg md:text-2xl text-white/70 max-w-2xl font-body leading-relaxed text-balance">
+                        Fisiopatología, Terapias Dirigidas y Humanización. El programa definitivo para liderar la transición clínica hacia la inhibición selectiva de la IL-31 y la restitución del sueño.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+                        <div class="flex items-start gap-4 text-white/90">
+                            <span class="material-symbols-outlined text-accent">biotech</span>
+                            <span class="text-xs font-semibold leading-snug">Evidencia basada en la literatura de la BAD (BJD, CED, SHD).</span>
+                        </div>
+                        <div class="flex items-start gap-4 text-white/90">
+                            <span class="material-symbols-outlined text-accent">verified</span>
+                            <span class="text-xs font-semibold leading-snug">Créditos de Formación Continuada (CFC) del SNS.</span>
+                        </div>
+                        <div class="flex items-start gap-4 text-white/90">
+                            <span class="material-symbols-outlined text-accent">psychology</span>
+                            <span class="text-xs font-semibold leading-snug">Enfoque Humanista: Control del insomnio y PROMs.</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Botones CTA con previsualización/descarga de PDF -->
+                    <div class="flex flex-wrap gap-6 pt-6">
+                        <a href="./memoria.pdf" target="_blank" class="bg-secondary text-white px-8 py-4 rounded-md font-bold text-sm uppercase tracking-widest hover:bg-accent transition-all shadow-xl flex items-center gap-3">
+                            Abrir Memoria Académica
+                            <span class="material-symbols-outlined text-sm">open_in_new</span>
+                        </a>
+                        <a href="#programa" class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-md font-bold text-sm uppercase tracking-widest hover:bg-white/20 transition-all">
+                            Ver Módulos Clínicos
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Asymmetrical Typographic Block -->
+                <div class="hidden lg:flex lg:col-span-4 justify-end items-center relative">
+                    <div class="text-right flex flex-col items-end">
+                        <span class="text-[14vw] font-black text-white/5 leading-none select-none">IL-31</span>
+                        <div class="mt-[-4rem] p-8 border-r-4 border-accent bg-white/5 backdrop-blur-sm max-w-xs reveal" style="transition-delay: 0.3s;">
+                            <p class="text-white font-headline italic text-xl leading-relaxed opacity-90">
+                                "Bloquear el eje neuroinmune no solo alivia la piel; escinde el ciclo picor-rascado y restaura la biografía del paciente."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Stats Bar -->
+        <section class="bg-surface-low border-b border-outline/10 py-12">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="flex flex-col items-center text-center space-y-3 reveal">
+                        <span class="material-symbols-outlined text-secondary text-4xl">assignment_turned_in</span>
+                        <div class="text-3xl font-extrabold text-primary">Self-Assessment</div>
+                        <div class="text-[10px] uppercase font-black tracking-widest text-outline">Evaluación Clínica Continua</div>
+                    </div>
+                    <div class="flex flex-col items-center text-center space-y-3 reveal" style="transition-delay: 0.1s;">
+                        <span class="material-symbols-outlined text-secondary text-4xl">workspace_premium</span>
+                        <div class="text-3xl font-extrabold text-primary">Créditos CFC</div>
+                        <div class="text-[10px] uppercase font-black tracking-widest text-outline">Acreditación Sistema Nacional de Salud</div>
+                    </div>
+                    <div class="flex flex-col items-center text-center space-y-3 reveal" style="transition-delay: 0.2s;">
+                        <span class="material-symbols-outlined text-secondary text-4xl">view_module</span>
+                        <div class="text-3xl font-extrabold text-primary">3 Módulos</div>
+                        <div class="text-[10px] uppercase font-black tracking-widest text-outline">Fisiopatología, Clínica y Humanismo</div>
+                    </div>
+                    <div class="flex flex-col items-center text-center space-y-3 reveal" style="transition-delay: 0.3s;">
+                        <span class="material-symbols-outlined text-secondary text-4xl">calendar_month</span>
+                        <div class="text-3xl font-extrabold text-primary">8 Meses</div>
+                        <div class="text-[10px] uppercase font-black tracking-widest text-outline">Disponibilidad de la Plataforma</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. Section: El Desafío (Justificación Clínica) -->
+        <section id="proposito" class="py-32 bg-surface-lowest">
+            <div class="max-w-4xl mx-auto px-6 space-y-12 text-center reveal">
+                <div class="w-16 h-1.5 bg-secondary mx-auto mb-8"></div>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-primary leading-tight tracking-ultra">
+                    Un Cambio de Paradigma: <br> Del Eritema al Control Rápido del Prurito.
+                </h2>
+                <h3 class="text-xl md:text-2xl text-secondary font-bold uppercase tracking-widest italic opacity-80">
+                    La Justificación Clínica de la modulación del Eje Neuroinmune.
+                </h3>
+                <div class="text-xl md:text-2xl text-on-surface leading-loose font-body font-light text-balance text-left md:text-center mt-12 bg-surface-low p-10 rounded-2xl border border-outline/5 shadow-sm italic text-primary/80">
+                    "A pesar de los avances con los biológicos clásicos y los inhibidores JAK, el prurito crónico severo y el insomnio secundario siguen representando una necesidad médica no cubierta. La inhibición de la interleucina-31 (IL-31) emerge como un paradigma disruptivo: la capacidad de actuar directamente sobre las terminaciones nerviosas periféricas sin requerir monitorización analítica intensiva."
+                </div>
+                <p class="text-lg text-primary font-black uppercase tracking-[0.3em] pt-8">La vanguardia dermatológica exige actualizar competencias hoy.</p>
+            </div>
+        </section>
+
+        <!-- 2. Section: Metodología Inmersiva (FONDO BLANCO PURO) -->
+        <section id="metodologia" class="py-32 bg-surface-lowest border-y border-outline/10">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                <div class="space-y-12 reveal">
+                    <div>
+                        <span class="text-secondary font-black text-[11px] uppercase tracking-[0.6em] mb-4 block">Eficacia Formativa</span>
+                        <h2 class="text-5xl font-black text-primary tracking-ultra">Metodología UX y Certificación Oficial.</h2>
+                    </div>
+                    <p class="text-lg text-on-surface/60 font-body leading-relaxed">Un entorno virtual de aprendizaje diseñado para garantizar la adquisición de competencias, exigiendo una navegación secuencial requerida por la Comisión Nacional.</p>
+                    
+                    <ul class="space-y-10">
+                        <li class="flex gap-6 group">
+                            <div class="bg-surface-low p-4 h-fit rounded-lg group-hover:bg-secondary group-hover:text-white transition-all shadow-sm">
+                                <span class="material-symbols-outlined">school</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary mb-2">Evaluación Formativa Continua</h4>
+                                <p class="text-sm text-on-surface/50 leading-relaxed italic">Cuestionarios interactivos (Self-Assessments) al final de cada módulo con feedback razonado al instante.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-6 group">
+                            <div class="bg-surface-low p-4 h-fit rounded-lg group-hover:bg-secondary group-hover:text-white transition-all shadow-sm">
+                                <span class="material-symbols-outlined">auto_stories</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary mb-2">Contenidos de Clase Mundial</h4>
+                                <p class="text-sm text-on-surface/50 leading-relaxed italic">Malla curricular basada estrictamente en el ecosistema de journals de la British Association of Dermatologists (BAD).</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-6 group">
+                            <div class="bg-surface-low p-4 h-fit rounded-lg group-hover:bg-secondary group-hover:text-white transition-all shadow-sm">
+                                <span class="material-symbols-outlined">bolt</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary mb-2">Flexibilidad Asíncrona</h4>
+                                <p class="text-sm text-on-surface/50 leading-relaxed italic">Estudio adaptativo 100% online con soporte audiovisual avanzado (podcasts e infografías) para agendas saturadas.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Logos BAD y Oxford desnudos sobre fondo blanco -->
+                <div class="flex flex-col items-center justify-center gap-16 mt-12 lg:mt-32 reveal" style="transition-delay: 0.2s;">
+                    <!-- Logo Arriba: BAD -->
+                    <div class="flex flex-col items-center text-center w-full max-w-sm">
+                        <img src="./logos/logo_bad.png" alt="British Association of Dermatologists" class="h-24 md:h-32 w-auto mb-4 drop-shadow-sm" onerror="this.src='https://placehold.co/300x150/transparent/0a192f?text=BAD+Journals'">
+                        <span class="text-[10px] font-black text-outline/50 uppercase tracking-[0.3em]">Respaldo Literario</span>
+                    </div>
+                    
+                    <!-- Logo Abajo: Oxford -->
+                    <div class="flex flex-col items-center text-center w-full max-w-sm">
+                        <img src="./logos/logo_oxford.png" alt="Oxford University Press" class="h-24 md:h-32 w-auto mb-4 drop-shadow-sm" onerror="this.src='https://placehold.co/300x150/transparent/0a192f?text=Oxford+Press'">
+                        <span class="text-[10px] font-black text-outline/50 uppercase tracking-[0.3em]">Editorial Científica</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Section: Objetivos (FONDO PASTEL AZUL) -->
+        <section id="objetivos" class="py-32 bg-surface-low">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="mb-20 text-center reveal">
+                    <span class="text-secondary font-black text-[11px] uppercase tracking-[0.5em] mb-4 block">Competencias a Desarrollar</span>
+                    <h2 class="text-4xl md:text-5xl font-black text-primary tracking-ultra">Objetivos del Programa.</h2>
+                    <p class="text-lg text-on-surface/60 mt-4 max-w-2xl mx-auto italic">Capacitar al especialista a través de tres dimensiones fundamentales para la nueva era terapéutica en Dermatitis Atópica.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Objetivo 1 -->
+                    <div class="bg-white p-10 rounded-2xl border border-outline/5 shadow-sm reveal hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-14 h-14 bg-surface-low rounded-full flex items-center justify-center mb-8">
+                            <span class="material-symbols-outlined text-secondary text-3xl">science</span>
+                        </div>
+                        <h4 class="text-2xl font-black text-primary mb-4">Dimensión Fisiopatológica</h4>
+                        <p class="text-on-surface/70 leading-relaxed text-sm">
+                            Comprender la interacción del sistema neuroinmune y el papel central de la interleucina-31 (IL-31) como mediador clave en el ciclo picor-rascado.
+                        </p>
+                    </div>
+                    
+                    <!-- Objetivo 2 -->
+                    <div class="bg-white p-10 rounded-2xl border border-outline/5 shadow-sm reveal hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 0.1s;">
+                        <div class="w-14 h-14 bg-surface-low rounded-full flex items-center justify-center mb-8">
+                            <span class="material-symbols-outlined text-secondary text-3xl">monitor_heart</span>
+                        </div>
+                        <h4 class="text-2xl font-black text-primary mb-4">Dimensión Terapéutica</h4>
+                        <p class="text-on-surface/70 leading-relaxed text-sm">
+                            Analizar la eficacia y rapidez de acción de las nuevas terapias dirigidas, diferenciando los perfiles de seguridad frente a los inhibidores JAK y otros biológicos clásicos.
+                        </p>
+                    </div>
+                    
+                    <!-- Objetivo 3 -->
+                    <div class="bg-white p-10 rounded-2xl border border-outline/5 shadow-sm reveal hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 0.2s;">
+                        <div class="w-14 h-14 bg-surface-low rounded-full flex items-center justify-center mb-8">
+                            <span class="material-symbols-outlined text-secondary text-3xl">diversity_1</span>
+                        </div>
+                        <h4 class="text-2xl font-black text-primary mb-4">Dimensión Humanista</h4>
+                        <p class="text-on-surface/70 leading-relaxed text-sm">
+                            Incorporar el uso sistemático de PROMs (PP-NRS, SD-NRS) y estrategias de comunicación empática para mitigar el impacto del insomnio en el paciente policonsultador.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Section: Público Objetivo (Impacto Clínico) -->
+        <section id="impacto" class="py-32 bg-primary text-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="mb-20 text-center reveal">
+                    <span class="text-accent text-[11px] font-black uppercase tracking-[0.4em] mb-4 block">Ecosistema Hospitalario</span>
+                    <h2 class="text-4xl md:text-5xl font-black mb-6 tracking-ultra">Capacitación de Excelencia en Inmunología.</h2>
+                    <p class="text-white/60 text-lg uppercase font-bold tracking-[0.2em] italic">Impacto transversal por perfiles facultativos.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Especialistas -->
+                    <div class="p-8 border border-white/10 rounded-xl space-y-6 reveal">
+                        <span class="text-[10px] font-black text-accent tracking-stately">PERFIL 01</span>
+                        <h4 class="text-2xl font-black">Dermatólogos</h4>
+                        <p class="text-sm text-white/50 leading-relaxed italic">Prescriptores principales responsables del algoritmo terapéutico sistémico y el rescate del paciente refractario.</p>
+                    </div>
+                    <!-- MIR -->
+                    <div class="p-8 border border-white/10 rounded-xl space-y-6 reveal" style="transition-delay: 0.1s;">
+                        <span class="text-[10px] font-black text-accent tracking-stately">PERFIL 02</span>
+                        <h4 class="text-2xl font-black">Médicos MIR</h4>
+                        <p class="text-sm text-white/50 leading-relaxed italic">Construyendo las bases de la dermatología traslacional y la neuroinmunología desde los últimos años de residencia.</p>
+                    </div>
+                    <!-- Alergólogos -->
+                    <div class="p-8 border border-white/10 rounded-xl space-y-6 reveal" style="transition-delay: 0.2s;">
+                        <span class="text-[10px] font-black text-accent tracking-stately">PERFIL 03</span>
+                        <h4 class="text-2xl font-black">Alergólogos</h4>
+                        <p class="text-sm text-white/50 leading-relaxed italic">Manejo multidisciplinar coordinado ante el solapamiento de patologías asociadas a la inflamación sistémica tipo 2.</p>
+                    </div>
+                    <!-- Pediatras -->
+                    <div class="p-8 border border-white/10 rounded-xl space-y-6 reveal" style="transition-delay: 0.3s;">
+                        <span class="text-[10px] font-black text-accent tracking-stately">PERFIL 04</span>
+                        <h4 class="text-2xl font-black">Pediatras</h4>
+                        <p class="text-sm text-white/50 leading-relaxed italic">Gestión de terapias biológicas en población adolescente (≥12 años) y control de la carga familiar de la enfermedad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Section: Itinerario Académico (Contenidos y Estructura) -->
+        <section id="programa" class="py-32 bg-surface-lowest">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="mb-20 text-center reveal">
+                    <span class="text-secondary font-black text-[11px] uppercase tracking-[0.5em] mb-4 block font-headline">Contenidos y Estructura</span>
+                    <h2 class="text-4xl md:text-6xl font-black text-primary tracking-ultra">El Currículum Científico.</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                    <!-- Sidebar Informativo -->
+                    <div class="lg:col-span-4 sticky top-32 reveal">
+                        <p class="text-lg font-bold text-primary mb-6 uppercase tracking-[0.2em] italic">3 Módulos de Excelencia.</p>
+                        <p class="text-on-surface/50 leading-relaxed text-sm italic border-l border-outline/30 pl-6 mb-8">Estructurado bajo los máximos estándares UX para CFC: Scientific Core, Critical Debates, Practice Insights y Evaluaciones formativas en cada módulo.</p>
+                        
+                        <div class="bg-surface-low p-6 rounded-xl border border-outline/5 shadow-sm space-y-4">
+                            <div class="flex items-center gap-4">
+                                <span class="bg-white p-2 rounded-lg text-secondary material-symbols-outlined text-sm">menu_book</span>
+                                <span class="text-[10px] font-black uppercase tracking-widest text-primary/80">Scientific Core Articles</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="bg-white p-2 rounded-lg text-secondary material-symbols-outlined text-sm">quiz</span>
+                                <span class="text-[10px] font-black uppercase tracking-widest text-primary/80">Self-Assessment Test</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="bg-white p-2 rounded-lg text-secondary material-symbols-outlined text-sm">smart_display</span>
+                                <span class="text-[10px] font-black uppercase tracking-widest text-primary/80">Casos Clínicos UX</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Acordeones con Temario -->
+                    <div class="lg:col-span-8 space-y-4 reveal">
+                        
+                        <!-- Módulo 1 -->
+                        <div class="accordion-item bg-white rounded-xl overflow-hidden border border-outline/10 transition-all shadow-sm">
+                            <button class="w-full px-8 py-8 flex justify-between items-center text-left focus:outline-none" onclick="toggleAccordion(this)">
+                                <div class="flex items-center gap-6">
+                                    <span class="text-[10px] font-black text-outline tracking-stately">M1</span>
+                                    <h4 class="text-xl font-bold text-primary">El Eje Neuroinmune: Fisiopatología del Prurito</h4>
+                                </div>
+                                <span class="material-symbols-outlined text-secondary accordion-icon transition-transform">expand_more</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="px-8 pb-8 pt-0 ml-12">
+                                    <p class="text-on-surface/70 leading-relaxed italic border-l-2 border-secondary/20 pl-6 h-fit py-1 mb-6">
+                                        Evolución desde la inflamación clásica tipo 2 hacia la comprensión integral del papel de la IL-31 como puente entre inmunidad y terminaciones nerviosas.
+                                    </p>
+                                    <div class="bg-surface-low rounded-xl p-6 border border-outline/5">
+                                        <h5 class="text-[10px] font-black uppercase tracking-stately text-secondary mb-4">Estructura del Módulo</h5>
+                                        <ul class="space-y-3">
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Executive Brief:</strong> La citocina del prurito (Podcast).</li>
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Scientific Core:</strong> Bloqueo selectivo del receptor IL-31RA.</li>
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Critical Debate:</strong> ¿Es el prurito el motor de la cronicidad?</li>
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Further readings:</strong> Consensos europeos de fenotipificación clínica.</li>
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Practice Insights:</strong> Identificación del fenotipo clínico por PP-NRS.</li>
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Clinical Case:</strong> Adolescente con eccema moderado e insomnio severo.</li>
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Self-Assessment:</strong> Cuestionario sobre vías de señalización e interleucinas.</li>
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Multimedia:</strong> Infografía dinámica del mecanismo neuroinmune.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Módulo 2 -->
+                        <div class="accordion-item bg-white rounded-xl overflow-hidden border border-outline/10 transition-all shadow-sm">
+                            <button class="w-full px-8 py-8 flex justify-between items-center text-left focus:outline-none" onclick="toggleAccordion(this)">
+                                <div class="flex items-center gap-6">
+                                    <span class="text-[10px] font-black text-outline tracking-stately">M2</span>
+                                    <h4 class="text-xl font-bold text-primary">Paradigmas Emergentes y Terapias Dirigidas</h4>
+                                </div>
+                                <span class="material-symbols-outlined text-secondary accordion-icon transition-transform">expand_more</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="px-8 pb-8 pt-0 ml-12">
+                                    <p class="text-on-surface/70 leading-relaxed italic border-l-2 border-secondary/20 pl-6 h-fit py-1 mb-6">
+                                        Análisis exhaustivo de la evidencia científica, perfiles de seguridad y la rapidez de acción como nuevo estándar de eficacia terapéutica.
+                                    </p>
+                                    <div class="bg-surface-low rounded-xl p-6 border border-outline/5">
+                                        <h5 class="text-[10px] font-black uppercase tracking-stately text-secondary mb-4">Estructura del Módulo</h5>
+                                        <ul class="space-y-3">
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Executive Brief:</strong> La era de la precisión en Dermatología.</li>
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Scientific Core:</strong> Ensayos fase 3: Reducción rápida del prurito.</li>
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Critical Debate:</strong> Biológicos dirigidos vs. Inhibidores JAK.</li>
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Further readings:</strong> Eventos adversos de especial interés (AESI).</li>
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Practice Insights:</strong> Criterios de dosificación y optimización.</li>
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Clinical Case:</strong> Manejo de paciente con riesgo cardiovascular asociado.</li>
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Self-Assessment:</strong> Evaluación sobre hitos de eficacia (EASI, PP-NRS).</li>
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Multimedia:</strong> Animación del algoritmo de decisión clínica.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Módulo 3 -->
+                        <div class="accordion-item bg-white rounded-xl overflow-hidden border border-outline/10 transition-all shadow-sm">
+                            <button class="w-full px-8 py-8 flex justify-between items-center text-left focus:outline-none" onclick="toggleAccordion(this)">
+                                <div class="flex items-center gap-6">
+                                    <span class="text-[10px] font-black text-outline tracking-stately">M3</span>
+                                    <h4 class="text-xl font-bold text-primary">Humanización, Insomnio y PROMs</h4>
+                                </div>
+                                <span class="material-symbols-outlined text-secondary accordion-icon transition-transform">expand_more</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="px-8 pb-8 pt-0 ml-12">
+                                    <p class="text-on-surface/70 leading-relaxed italic border-l-2 border-secondary/20 pl-6 h-fit py-1 mb-6">
+                                        Integrando la medición del impacto biopsicosocial y el uso ágil de escalas clínicas en la consulta dermatológica diaria.
+                                    </p>
+                                    <div class="bg-surface-low rounded-xl p-6 border border-outline/5">
+                                        <h5 class="text-[10px] font-black uppercase tracking-stately text-secondary mb-4">Estructura del Módulo</h5>
+                                        <ul class="space-y-3">
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Executive Brief:</strong> El impacto oculto del agotamiento atópico.</li>
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Scientific Core:</strong> Privación del sueño y trastornos del estado de ánimo.</li>
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Critical Debate:</strong> Eficiencia: Midiendo SD-NRS y DLQI en 3 minutos.</li>
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Further readings:</strong> Recursos de Medicina Narrativa aplicada.</li>
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Practice Insights:</strong> Gestión de expectativas de aclaramiento de lesiones.</li>
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Clinical Case:</strong> Abordaje empático del paciente "policonsultador".</li>
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Self-Assessment:</strong> Cuestionario de calidad de vida y Soft Skills.</li>
+                                            <li class="flex items-start gap-3 text-sm text-primary/80"><span class="material-symbols-outlined text-accent text-[18px]">play_arrow</span> <strong>Multimedia:</strong> Entrevista clínica simulada en vídeo.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Section: Cuadro Docente y Avales (Logos Gigantes) -->
+        <section id="avales" class="py-32 bg-surface-low border-t border-outline/10">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="mb-24 text-center reveal">
+                    <span class="text-secondary font-black text-[11px] uppercase tracking-[0.8em] mb-4 block">Legitimidad Científica</span>
+                    <h2 class="text-4xl md:text-6xl font-black text-primary tracking-ultra">Dirección Académica Institucional.</h2>
+                    <p class="text-lg text-primary/40 font-bold uppercase tracking-[0.2em] mt-6 italic">KOLs de Referencia Nacional e Internacional.</p>
+                </div>
+                
+                <!-- Directors -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                    <div class="bg-white p-10 rounded-2xl border border-outline/5 shadow-sm reveal">
+                        <span class="text-[9px] font-black text-secondary tracking-widest uppercase mb-4 block">Editor en Jefe y Módulo 1</span>
+                        <h4 class="text-2xl font-black text-primary mb-3">Dr. Juan Francisco Silvestre Salvador</h4>
+                        <p class="text-xs font-bold text-outline opacity-70">Jefe de Servicio de Dermatología. Hospital General Universitario de Alicante.</p>
+                    </div>
+                    <div class="bg-white p-10 rounded-2xl border border-outline/5 shadow-sm reveal" style="transition-delay: 0.1s;">
+                        <span class="text-[9px] font-black text-secondary tracking-widest uppercase mb-4 block">Editor Módulo 2 (Terapias)</span>
+                        <h4 class="text-2xl font-black text-primary mb-3">Dr. José Carlos Armario Hita</h4>
+                        <p class="text-xs font-bold text-outline opacity-70">Jefe de Servicio de Dermatología. Hospital Universitario Puerto Real (Cádiz).</p>
+                    </div>
+                    <div class="bg-white p-10 rounded-2xl border border-outline/5 shadow-sm reveal" style="transition-delay: 0.2s;">
+                        <span class="text-[9px] font-black text-secondary tracking-widest uppercase mb-4 block">Editora Módulo 3 (Humanismo)</span>
+                        <h4 class="text-2xl font-black text-primary mb-3">Dra. Esther Serra-Baldrich</h4>
+                        <p class="text-xs font-bold text-outline opacity-70">Especialista Senior en Dermatología. Hospital de la Santa Creu i Sant Pau (Barcelona).</p>
+                    </div>
+                </div>
+                
+                <!-- Institutional Seals -->
+                <div class="mt-32 flex flex-wrap justify-center items-center gap-16 md:gap-24 lg:gap-32 reveal">
+                    <img src="./logos/logo_aedv.png" alt="AEDV" class="h-32 md:h-40 lg:h-48 w-auto drop-shadow-sm" onerror="this.src='https://placehold.co/350x150/transparent/0a192f?text=AEDV'">
+                    <img src="./logos/logo_cfc.png" alt="CFC SNS" class="h-24 md:h-32 lg:h-40 w-auto drop-shadow-sm" onerror="this.src='https://placehold.co/350x150/transparent/0a192f?text=CFC+SNS'">
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Section: El Paciente en el Centro (GRAN FINAL UNIFICADO Y LOGO GIGANTE) -->
+        <section class="py-40 hero-gradient reveal relative overflow-hidden border-t border-white/10">
+            <!-- Círculo de fondo sutil para dar profundidad -->
+            <div class="absolute inset-0 bg-white/5 rounded-full filter blur-[100px] transform scale-150 -z-10 translate-x-1/3 translate-y-1/4"></div>
+
+            <div class="max-w-7xl mx-auto px-6 relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                
+                <!-- Bloque Izquierdo: Copy y CTA -->
+                <div class="flex flex-col items-start text-left">
+                    <span class="text-accent font-black text-[11px] uppercase tracking-[0.5em] mb-4 block">Sello Hygieia Hub</span>
+                    
+                    <h2 class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight tracking-ultra italic mb-6">
+                        El Paciente <br class="hidden lg:block"><span class="text-accent">en el Centro.</span>
+                    </h2>
+                    
+                    <h3 class="text-2xl md:text-3xl font-light text-white/90 leading-snug text-balance italic mb-6">
+                        Del ciclo picor-rascado a la restauración de la calidad de vida.
+                    </h3>
+                    
+                    <p class="max-w-xl text-lg text-white/70 leading-relaxed font-medium mb-12">
+                        Nuestra propuesta educativa culmina expandiendo el horizonte puramente inmunológico. Dotamos al clínico de herramientas para que la inhibición rápida del prurito sea un verdadero catalizador del bienestar del paciente. Únete como mecenas institucional para liderar esta vanguardia científica.
+                    </p>
+                    
+                    <div class="flex flex-col items-start gap-10">
+                        <a href="mailto:dfernandez@hygeia.network" class="bg-accent text-primary px-10 py-5 rounded-md font-extrabold text-sm uppercase tracking-widest hover:bg-white hover:scale-105 transition-all shadow-2xl flex items-center gap-4">
+                            Agendar Sesión B2B
+                            <span class="material-symbols-outlined">send</span>
+                        </a>
+                        
+                        <div class="flex flex-wrap gap-x-6 gap-y-3 text-[10px] font-black uppercase tracking-stately text-white/60 mt-2">
+                            <div class="flex items-center gap-2 whitespace-nowrap">
+                                <span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
+                                Acreditación Oficial SNS
+                            </div>
+                            <div class="flex items-center gap-2 whitespace-nowrap">
+                                <span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
+                                Unrestricted Educational Grant
+                            </div>
+                            <div class="flex items-center gap-2 whitespace-nowrap">
+                                <span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
+                                Vía de la IL-31
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque Derecho: Alianza Visual (Logo Gigante Ocupando su mitad) -->
+                <div class="flex flex-col items-center justify-center h-full w-full mt-16 lg:mt-0 relative">
+                    <!-- Logo maximizado (w-full max-w-xl) para dominar la pantalla derecha -->
+                    <img src="./logos/logo_hygeia.png" alt="Hygieia Hub" class="w-full max-w-xs md:max-w-md lg:max-w-xl h-auto drop-shadow-2xl hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x200/transparent/ffffff?text=Hygieia+Hub'">
+                </div>
+                
+            </div>
+        </section>    
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-24 bg-surface text-primary">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="space-y-4 text-center md:text-left">
+                <div class="flex items-center justify-center md:justify-start gap-4 mb-4">
+                    <img src="./logos/logo_hygeia.png" alt="Hygieia" class="h-32 w-auto" onerror="this.onerror=null; this.src='https://placehold.co/400x150/transparent/0a192f?text=Hygieia'">
+                </div>
+                <p class="text-[9px] font-black uppercase tracking-[0.4em] text-outline leading-loose">
+                    © 2026 Madrid — Barcelona <br>
+                    Hygieia Learning Hub. Asesoría Académica
+                </p>
+            </div>
+            
+            <div class="flex flex-col items-center text-center gap-6">
+                <p class="text-[8px] font-bold uppercase tracking-[0.2em] text-outline">
+                    Contacto: <br>
+                    <a href="mailto:dfernandez@hygeia.network" class="text-primary hover:text-secondary mt-2 block underline">dfernandez@hygeia.network</a>
+                </p>
+            </div>
+
+            <div class="flex gap-10 text-[10px] font-black uppercase tracking-stately text-primary/60">
+                <a href="#" class="hover:text-secondary transition-colors">Aviso Legal</a>
+                <a href="#" class="hover:text-secondary transition-colors">Privacidad Institucional</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth Reveal Intersection Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        // Accordion Logic
+        function toggleAccordion(button) {
+            const item = button.parentElement;
+            const content = item.querySelector('.accordion-content');
+            const isActive = item.classList.contains('active');
+
+            // Close all other accordions
+            document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                otherItem.classList.remove('active');
+                otherItem.querySelector('.accordion-content').style.maxHeight = null;
+            });
+
+            // Toggle current
+            if (!isActive) {
+                item.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+
+        // Header Scroll Toggle
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('glass-nav');
+                nav.classList.remove('bg-transparent');
+            } else {
+                // nav.classList.remove('glass-nav');
+            }
+        });
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    
+    <style>
+      /* MAQUILLAJE CORPORATIVO FORZADO EN LA LANDING (Tonos Azules) */
+      :root {
+        --chat--color--primary: #0a192f; /* Azul oscuro */
+        --chat--color--primary-shade-50: #1e3a8a; 
+        --chat--color--primary--shade-100: #1e40af; 
+        --chat--color--secondary: #0ea5e9; /* Celeste */
+        --chat--color-secondary-shade-50: #38bdf8; 
+        --chat--color-white: #ffffff;
+        --chat--color-light: #f0f9ff; /* Azul pastel */
+        --chat--color-dark: #0f172a; 
+        --chat--toggle--background: #0a192f; 
+        --chat--toggle--color: #ffffff; 
+      }
+      .chat-window {
+        box-shadow: 0 10px 25px rgba(10, 25, 47, 0.15) !important;
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+
+    <script type="module">
+      import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+      createChat({
+        webhookUrl: 'https://n8n.asklepiosdat.com/webhook/edfb4e9b-1e66-4b06-975e-b200f5213782/chat',
+        initialMessages: [
+            '¡Hola! Soy el Asesor Académico de Hygeia Learning Hub.',
+            '¿En qué puedo ayudarte hoy sobre el nuevo programa State of the Art in Atopic Dermatitis?'
+        ],
+        i18n: {
+            en: {
+                title: 'Hygeia Learning Hub', 
+                subtitle: 'Asesoría Académica Institucional',
+                getStarted: 'Nueva conversación', 
+                chatInput: { 
+                    placeholder: 'Escribe tu consulta institucional aquí...' 
+                }
+            }
+        }
+      });
+    </script>
+</body>
+</html>
